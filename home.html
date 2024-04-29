@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        window.history.forward();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internet Cafe Management System</title>
@@ -15,7 +18,7 @@
 
         <nav>
             <ul>
-                <li><a href="logout.php" onclick="logout()">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -39,12 +42,7 @@
             window.location.href = 'login.html';
         }
     });
-function logout() {
-    // Remove the loggedIn flag from localStorage
-    localStorage.removeItem("loggedIn");
 
-    // Redirect to the logout PHP script
-  //  window.location.href = 'index.php';
-}
 </script>
+   
 </html>

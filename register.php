@@ -16,6 +16,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<script>alert('Error: All fields are required.'); window.location.href = 'register.html';</script>";
         exit();
     }
+  /*  // Validate email to ensure it is a Gmail address
+
+    if (!preg_match("/^[a-zA-Z0-9._%+-]+@gmail\.com$/", $email)) {
+        echo "<script>alert('Error: Email must be a Gmail address'); window.location.href = 'register.html';</script>";
+        exit();
+    }*/
+
+    if (!preg_match("/^[a-zA-Z0-9._%+-]+@gmail\.com$/", $email)) {
+        error_log("Email validation failed for: $email");
+        echo "<script>window.alert('Error: Email must be a Gmail address'); window.location.href = 'register.html';</script>";
+        exit();
+    }
+    
 
     // Check if the email is already registered
     $emailCheckStmt = $conn->prepare("SELECT email FROM users WHERE email = ?");
@@ -46,7 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "<script>alert('Error: Unable to register. Please check your information and try again.'); window.location.href = 'register.html';</script>";
     }
-
+    
+    
     // Close statement and connection
     $stmt->close();
     $conn->close();

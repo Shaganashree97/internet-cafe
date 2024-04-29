@@ -2,16 +2,9 @@
 session_start();
 include 'db/conn.php';
 
-if ($_SESSION["loggedin"] === true)
-{
-   header("location: home.php");
-   exit();
-}
 
-elseif (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.html");
-    exit;
-}
+   header("location: home.php");
+
 ?>
 
 <!DOCTYPE html>
