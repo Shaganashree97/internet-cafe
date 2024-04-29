@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Cafe Management System</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1><span>Internet Cafe</span><br> Management System</h1>
+
+    <footer>
+      <p>&copy; 2024 Internet Cafe Management System</p>
+    </footer>
+</body>
+<script>
+    // This script checks for the 'logout' query parameter
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('logout') === 'success') {
+            alert('You have been logged out successfully.');
+        }
+    };
+</script>
+
+</html>

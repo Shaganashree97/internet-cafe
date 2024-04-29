@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Cafe Management System</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>User Registration Form</h2>
+    <form action="register.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required pattern="[0-9]{10}" title="Phone number should be 10 digits">
+        <br>
+
+        <input type="submit" value="Register">
+    </form>
+
+
+    <footer>
+        <p>&copy; 2024 Internet Cafe Management System</p>
+    </footer>
+</body>
+<script>
+    // This script will check for URL parameters to display messages
+    document.addEventListener("DOMContentLoaded", function() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('error')) {
+            const error = params.get('error');
+            alert(error);
+        } else if (params.has('success')) {
+            alert('Registration successful. Welcome!');
+            // Redirect if needed or clear the search parameters
+            window.location.href = 'login.html';
+        }
+    });
+</script>
+</html>
