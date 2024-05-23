@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.history.forward();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Cafe Management System</title>
+    
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+
+        </nav>
+
+        <nav>
+            <ul>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>Welcome to<br><span>Internet Cafe</span></h1>
+
+    <footer>
+        <p>&copy; 2024 Internet Cafe Management System</p>
+    </footer>
+</body>
+<script>
+    // This script will check for URL parameters to display messages
+    document.addEventListener("DOMContentLoaded", function() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('error')) {
+            const error = params.get('error');
+            alert(error);
+        } else if (params.has('success')) {
+            alert('Registration successful. Welcome!');
+            // Redirect if needed or clear the search parameters
+            window.location.href = 'login.html';
+        }
+    });
+
+</script>
+   
+</html>
